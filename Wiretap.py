@@ -26,11 +26,17 @@ column = main2.find(class_="large-column-left news-column")
 
 #----------------------------------------------------
 #Finally within news 
+
+#Article clearfix is the list of div tags that has the info needed
 articles = column.find_all(class_="article clearfix")
 
-latest = articles[0]
+info = articles[0]
+date = articles[0]
 
-title = latest.find("a").get_text()
+date = info.find("p").get_text()
+print("[ " + date + " ]")
+
+title = info.find("a").get_text()
 print(title)
-body = latest.find(class_="article-body")
+body = info.find(class_="article-body")
 print(body.text)
