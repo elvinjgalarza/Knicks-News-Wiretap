@@ -29,14 +29,20 @@ column = main2.find(class_="large-column-left news-column")
 
 #Article clearfix is the list of div tags that has the info needed
 articles = column.find_all(class_="article clearfix")
+#print(len(articles))
+i = 0
+while i < len(articles):
+    info = articles[i]
+    date = articles[i]
 
-info = articles[0]
-date = articles[0]
+    date = info.find("p").get_text()
+    print("[ " + date.strip() + " ]")
 
-date = info.find("p").get_text()
-print("[ " + date.strip() + " ]")
+    title = info.find("a").get_text()
+    print(title)
+    body = info.find(class_="article-body")
+    print(body.text)
+    
+    print("---------------------------------------------------------------------------------------------------------------------------------")
 
-title = info.find("a").get_text()
-print(title)
-body = info.find(class_="article-body")
-print(body.text)
+    i += 1
