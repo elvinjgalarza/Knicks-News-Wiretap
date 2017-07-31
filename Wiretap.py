@@ -31,7 +31,8 @@ column = main2.find(class_="large-column-left news-column")
 articles = column.find_all(class_="article clearfix")
 #print(len(articles))
 i = 0
-while i < len(articles):
+while (i < 10):
+    print("#%d" % (i+1))
     info = articles[i]
     date = articles[i]
 
@@ -43,6 +44,6 @@ while i < len(articles):
     body = info.find(class_="article-body")
     print(body.text)
     
-    print("---------------------------------------------------------------------------------------------------------------------------------")
+    print("------------------------------------------------------------------------------------------------------------------------------------------")
 
     i += 1
