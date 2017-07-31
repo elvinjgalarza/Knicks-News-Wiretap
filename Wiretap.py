@@ -34,7 +34,7 @@ info = articles[0]
 date = articles[0]
 
 date = info.find("p").get_text()
-print("[ " + date + " ]")
+print("[ " + date.strip() + " ]")
 
 title = info.find("a").get_text()
 print(title)
