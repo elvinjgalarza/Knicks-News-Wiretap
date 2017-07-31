@@ -31,7 +31,24 @@ column = main2.find(class_="large-column-left news-column")
 articles = column.find_all(class_="article clearfix")
 #print(len(articles))
 i = 0
-while (i < 10):
+while (i < len(articles)):
+    while (i < 10):
+        print("#%d" % (i+1))
+        info = articles[i]
+        date = articles[i]
+
+        date = info.find("p").get_text()
+        print("[ " + date.strip() + " ]")
+
+        title = info.find("a").get_text()
+        print(title)
+        body = info.find(class_="article-body")
+        print(body.text)
+        
+        print("------------------------------------------------------------------------------------------------------------------------------------------")
+
+        i += 1
+# html code changes after 10 news items
     print("#%d" % (i+1))
     info = articles[i]
     date = articles[i]
@@ -41,7 +58,7 @@ while (i < 10):
 
     title = info.find("a").get_text()
     print(title)
-    body = info.find(class_="article-body")
+    body = info.find(class_="article-content content")
     print(body.text)
     
     print("------------------------------------------------------------------------------------------------------------------------------------------")
