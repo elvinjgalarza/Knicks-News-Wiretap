@@ -51,16 +51,13 @@ while (i < len(articles)):
 # html code changes after 10 news items
     print("#%d" % (i+1))
     info = articles[i]
-    date = articles[i]
-
-    date = info.find("p").get_text()
-    print("[ " + date.strip() + " ]")
+    print("[ Past News ]")
 
     title = info.find("a").get_text()
     print(title)
     body = info.find(class_="article-content content")
     print(body.text)
     
-    print("------------------------------------------------------------------------------------------------------------------------------------------")
+    print("-------------------------------------------------------------------------------------------------------------------------------------------------")
 
     i += 1
